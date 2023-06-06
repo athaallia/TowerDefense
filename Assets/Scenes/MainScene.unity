@@ -4312,11 +4312,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node_001
       objectReference: {fileID: 0}
-    - target: {fileID: 7616385067805878771, guid: 09de5d92278cb494fa17205cea9a5f34,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 069d310d746524d4fbb9e6b5e692b476, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09de5d92278cb494fa17205cea9a5f34, type: 3}
 --- !u!4 &504984585 stripped
@@ -5556,6 +5551,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 797824497}
     m_Modifications:
+    - target: {fileID: 1843212859833138010, guid: 09de5d92278cb494fa17205cea9a5f34,
+        type: 3}
+      propertyPath: positionOffset.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4088512255891459389, guid: 09de5d92278cb494fa17205cea9a5f34,
         type: 3}
       propertyPath: m_RootOrder
@@ -8947,6 +8947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036847550}
   - component: {fileID: 1036847549}
+  - component: {fileID: 1036847551}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -8986,6 +8987,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1036847551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036847548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7727567b3e3cfd4c9474c85598e710d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardTurretPrefab: {fileID: 100473315364889089, guid: adaa9625a5311584a9e5ef0d6a0fd8f5,
+    type: 3}
 --- !u!1001 &1037806836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19228,11 +19243,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node_000
       objectReference: {fileID: 0}
-    - target: {fileID: 7616385067805878771, guid: 09de5d92278cb494fa17205cea9a5f34,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 069d310d746524d4fbb9e6b5e692b476, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09de5d92278cb494fa17205cea9a5f34, type: 3}
 --- !u!4 &9168269817225738681 stripped
