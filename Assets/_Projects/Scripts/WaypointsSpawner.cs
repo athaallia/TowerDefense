@@ -26,7 +26,9 @@ public class WaypointsSpawner : MonoBehaviour
         }
         
         countdown -= Time.deltaTime;
-        spawnCountdownText.text = Mathf.Floor(countdown).ToString();
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
+        spawnCountdownText.text = string.Format("{0:00.00}", countdown);
     }
 
 
