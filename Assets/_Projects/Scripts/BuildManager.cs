@@ -6,8 +6,6 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager Instance;
 
-    public GameObject standardTurretPrefab;
-    public GameObject missileLauncherPrefab;
     public GameObject buildEffect;
 
     private TurretBlueprint turretToBuild;

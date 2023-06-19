@@ -86,6 +86,7 @@ public class Bullet : MonoBehaviour
         
         if (enemy != null)
         {
+            Debug.Log("ENEMY TAKE DAMAGE");
             enemy.TakeDamage(damage);
         }
     }
