@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject deathEffect;
+
     public float speed = 10f;
+    public int health = 100;
+    public int moneyGain = 50;
 
     private Transform target;
     private int waypointIndex = 0;
+    
 
 
 
@@ -35,11 +41,46 @@ public class Enemy : MonoBehaviour
     {
         if (waypointIndex >= Waypoints.waypointTransform.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
 
         waypointIndex++;
         target = Waypoints.waypointTransform[waypointIndex];
+    }
+
+
+
+    public void TakeDamage(int amount)
+    {
+        Debug.Log("ENEMY TAKE DAMAGE");
+
+        health -= amount;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+
+
+    private void Die()
+    {
+        Debug.Log("ENEMY DIE");
+
+        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+
+        PlayerStats.money += moneyGain;
+        Destroy(gameObject);
+    }
+
+
+
+    private void EndPath()
+    {
+        PlayerStats.lives--;
+        Destroy(gameObject);
     }
 }
