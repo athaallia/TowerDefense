@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Transform target;
-    
+
     public int damage = 50;
     public float speed = 70f;
     public float explosionRadius = 10f;
@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
 
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
-        
+
         if (dir.magnitude <= distanceThisFrame)
         {
             HitTarget();
@@ -80,13 +80,13 @@ public class Bullet : MonoBehaviour
 
     private void Damage(Transform _enemy)
     {
-        Debug.Log("ENEMY DAMAGE");
+        // Debug.Log("ENEMY DAMAGE");
 
-        Enemy enemy = GetComponent<Enemy>();
-        
+        Enemy enemy = _enemy.GetComponent<Enemy>();
+
         if (enemy != null)
         {
-            Debug.Log("ENEMY TAKE DAMAGE");
+            // Debug.Log("ENEMY TAKE DAMAGE");
             enemy.TakeDamage(damage);
         }
     }
@@ -96,6 +96,6 @@ public class Bullet : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,explosionRadius);
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }
