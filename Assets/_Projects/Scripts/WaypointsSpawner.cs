@@ -36,6 +36,7 @@ public class WaypointsSpawner : MonoBehaviour
     IEnumerator SpawnItem()
     {
         waypointIndex++;
+        PlayerStats.rounds++;
 
         for (int i = 0; i < waypointIndex; i++)
         {
