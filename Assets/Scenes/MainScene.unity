@@ -2034,6 +2034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpaceCanvas: {fileID: 347041316}
+  upgradeCost: {fileID: 1408804027}
+  upgradeButton: {fileID: 1959677836}
 --- !u!1001 &287723659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4973,70 +4975,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 464453953}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &465351360
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 465351361}
-  - component: {fileID: 465351362}
-  m_Layer: 0
-  m_Name: Sell
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &465351361
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465351360}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000015258789}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1672516868}
-  m_Father: {fileID: 870410184}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 687.75, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &465351362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465351360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1001 &482791418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9136,7 +9074,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1959677835}
-  - {fileID: 465351361}
+  - {fileID: 1672516868}
   m_Father: {fileID: 2118285117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13982,13 +13920,22 @@ MonoBehaviour:
   standartTurret:
     prefab: {fileID: 100473315364889089, guid: adaa9625a5311584a9e5ef0d6a0fd8f5, type: 3}
     cost: 75
+    upgradedPrefab: {fileID: 100473315364889089, guid: c95ea5123216bb9479a8d356c499edc3,
+      type: 3}
+    upgradeCost: 100
   missileLauncher:
     prefab: {fileID: 147612144865726720, guid: 665eb9859bf0a5d4e8e04ff197279bf6, type: 3}
     cost: 150
+    upgradedPrefab: {fileID: 147612144865726720, guid: 17c1e229604d9774d891be47ee329eed,
+      type: 3}
+    upgradeCost: 200
   laserBeamer:
     prefab: {fileID: 4069040131076767223, guid: 1e2b0bc71f1b7d842ab4b4a6e4794644,
       type: 3}
     cost: 250
+    upgradedPrefab: {fileID: 4069040131076767223, guid: d60c321e2dc1c564b81489ceb29d382f,
+      type: 3}
+    upgradeCost: 300
 --- !u!1001 &1360687904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17823,7 +17770,7 @@ GameObject:
   - component: {fileID: 1672516870}
   - component: {fileID: 1672516869}
   m_Layer: 0
-  m_Name: Upgrade
+  m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17837,17 +17784,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672516867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00006866455}
+  m_LocalScale: {x: 1.0000002, y: 0.9999998, z: 0.9999998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1545397084}
-  m_Father: {fileID: 465351361}
-  m_RootOrder: 0
+  m_Father: {fileID: 870410184}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 318.875, y: -200}
+  m_AnchoredPosition: {x: 956.625, y: -200}
   m_SizeDelta: {x: 637.75, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672516869
@@ -17907,7 +17854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6218583, g: 0.6947258, b: 0.8301887, a: 1}
+  m_Color: {r: 0.7921569, g: 0.827451, b: 0.8980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20923,7 +20870,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1959677837}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 286447151}
+        m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1959677837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20937,7 +20896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6218583, g: 0.6947258, b: 0.8301887, a: 1}
+  m_Color: {r: 0.78969383, g: 0.8258747, b: 0.8962264, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
