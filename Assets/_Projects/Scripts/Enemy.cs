@@ -7,51 +7,23 @@ public class Enemy : MonoBehaviour
 {
     public GameObject deathEffect;
 
-    public float speed = 10f;
-    public int health = 100;
-    public int moneyGain = 50;
+    public float startSpeed = 10f;
 
-    private Transform target;
-    private int waypointIndex = 0;
-    
+    [HideInInspector]
+    public float speed;
+    public float health = 100;
+    public int moneyGain = 50;
 
 
 
     private void Start()
     {
-        target = Waypoints.waypointTransform[0];
+        speed = startSpeed;
     }
 
 
 
-    private void Update()
-    {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
-        {
-            GetNextWaypoint();
-        }
-    }
-
-
-
-    private void GetNextWaypoint()
-    {
-        if (waypointIndex >= Waypoints.waypointTransform.Length - 1)
-        {
-            EndPath();
-            return;
-        }
-
-        waypointIndex++;
-        target = Waypoints.waypointTransform[waypointIndex];
-    }
-
-
-
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         Debug.Log($"ENEMY TAKE DAMAGE {amount}");
 
@@ -65,6 +37,13 @@ public class Enemy : MonoBehaviour
 
 
 
+    public void Slow(float percent)
+    {
+        speed = startSpeed * (1f - percent);
+    }
+
+
+
     private void Die()
     {
         Debug.Log("ENEMY DIE");
@@ -73,14 +52,6 @@ public class Enemy : MonoBehaviour
         Destroy(effect, 5f);
 
         PlayerStats.money += moneyGain;
-        Destroy(gameObject);
-    }
-
-
-
-    private void EndPath()
-    {
-        PlayerStats.lives--;
         Destroy(gameObject);
     }
 }
