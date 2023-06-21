@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public SceneFader sceneFader;
+
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        sceneFader.FadeTo("MainScene");
     }
 
 
 
     public void Quit()
     {
-        Debug.Log("Exciting...");
+        Debug.Log("Exiting...");
         Application.Quit();
     }
 }

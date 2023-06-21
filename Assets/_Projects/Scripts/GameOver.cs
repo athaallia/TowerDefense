@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 using TMPro;
 
 public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI rounds;
+    public SceneFader sceneFader;
 
 
 
@@ -20,13 +20,13 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 
 
 
     public void Menu()
     {
-        Debug.Log("Go To Menu");
+        sceneFader.FadeTo("MainMenu");
     }
 }
