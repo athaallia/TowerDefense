@@ -22,8 +22,8 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            doMovement = false;
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        //     doMovement = false;
 
         if (!doMovement)
             return;
