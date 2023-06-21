@@ -6,6 +6,8 @@ using TMPro;
 
 public class WaypointsSpawner : MonoBehaviour
 {
+    public GameManager gameManager;
+
     public static int enemiesAlive = 0;
 
     public Wave[] waves;
@@ -47,6 +49,8 @@ public class WaypointsSpawner : MonoBehaviour
 
         Wave wave = waves[waypointIndex];
 
+        enemiesAlive = wave.count;
+
         for (int i = 0; i < wave.count; i++)
         {
             SpawnEnemy(wave.enemy);
@@ -57,7 +61,7 @@ public class WaypointsSpawner : MonoBehaviour
 
         if (waypointIndex == waves.Length)
         {
-            Debug.Log("LEVEL WON!");
+            gameManager.WinLevel();
             this.enabled = false;
         }
     }
@@ -65,6 +69,5 @@ public class WaypointsSpawner : MonoBehaviour
     private void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-        enemiesAlive++;
     }
 }
