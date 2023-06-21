@@ -32,8 +32,6 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        Debug.Log($"ENEMY TAKE DAMAGE {amount}");
-
         startHealth -= amount;
         // healthBar.fillAmount = health / startHealth;
         healthBar.fillAmount = startHealth / 100;
@@ -55,12 +53,12 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("ENEMY DIE");
-
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
 
         PlayerStats.money += moneyGain;
+        WaypointsSpawner.enemiesAlive--;
+
         Destroy(gameObject);
     }
 }

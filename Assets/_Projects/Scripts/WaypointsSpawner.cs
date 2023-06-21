@@ -6,6 +6,10 @@ using TMPro;
 
 public class WaypointsSpawner : MonoBehaviour
 {
+    public static int enemiesAlive = 0;
+
+    public Wave[] waves;
+
     public Transform enemyPrefab;
     public Transform spawnPoint;
 
@@ -19,10 +23,14 @@ public class WaypointsSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (enemiesAlive > 0)
+            return;
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnItem());
             countdown = timeBetweenItem;
+            return;
         }
         
         countdown -= Time.deltaTime;
@@ -35,18 +43,28 @@ public class WaypointsSpawner : MonoBehaviour
 
     IEnumerator SpawnItem()
     {
-        waypointIndex++;
         PlayerStats.rounds++;
 
-        for (int i = 0; i < waypointIndex; i++)
+        Wave wave = waves[waypointIndex];
+
+        for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
+            SpawnEnemy(wave.enemy);
+            yield return new WaitForSeconds(1f / wave.rate);
+        }
+        
+        waypointIndex++;
+
+        if (waypointIndex == waves.Length)
+        {
+            Debug.Log("LEVEL WON!");
+            this.enabled = false;
         }
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        enemiesAlive++;
     }
 }
