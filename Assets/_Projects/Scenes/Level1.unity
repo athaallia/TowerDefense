@@ -11511,10 +11511,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdcfdd89dc8e5d47bb79e8d6029f693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waves:
+  - enemy: {fileID: 8520438214047781238, guid: 228d14a5caba6a646a9410a7c69dce18, type: 3}
+    count: 1
+    rate: 2
+  - enemy: {fileID: 8520438214047781238, guid: 228d14a5caba6a646a9410a7c69dce18, type: 3}
+    count: 2
+    rate: 2
+  - enemy: {fileID: 8520438214047781238, guid: 228d14a5caba6a646a9410a7c69dce18, type: 3}
+    count: 5
+    rate: 2
+  - enemy: {fileID: 8520438214047781238, guid: 593f649b8740f424d846c112f03c409b, type: 3}
+    count: 3
+    rate: 1
+  - enemy: {fileID: 8520438214047781238, guid: dba7e1382e4e5864eb0a232f14f04b70, type: 3}
+    count: 10
+    rate: 3
   enemyPrefab: {fileID: 6970592774142618988, guid: 228d14a5caba6a646a9410a7c69dce18,
     type: 3}
   spawnPoint: {fileID: 182524977}
-  timeBetweenItem: 10
+  timeBetweenItem: 2
   spawnCountdownText: {fileID: 2070444213}
 --- !u!4 &1036847550
 Transform:
@@ -11560,8 +11576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d23255bd2a7d3e479ecd9553e7eaa94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 1000
-  startLives: 20
+  startMoney: 400
+  startLives: 5
 --- !u!114 &1036847553
 MonoBehaviour:
   m_ObjectHideFlags: 0
